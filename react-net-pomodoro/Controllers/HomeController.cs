@@ -22,7 +22,7 @@ namespace react_net_pomodoro.Controllers
                     IsChecked = false,
                     IsActivated = true,
                     IsPause = false,
-                    Amounts = 4
+                    Amounts = 4,
                 },
                 new TodoModel
                 {

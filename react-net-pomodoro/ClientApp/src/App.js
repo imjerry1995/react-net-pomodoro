@@ -15,7 +15,7 @@ class App extends Component {
         super(props)
         this.state = {
             todos: [],
-            todoText: '', //input 綁定
+            todoText: '', 
             nowTask: '' //記錄目前正在倒數的任務
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,33 +26,22 @@ class App extends Component {
     }
 
     componentDidMount() {
-        //初始化
-        let todos = [{
-            id: 1,
-            text: 'THE FIRST THING TO DO TODAY',
-            isChecked: false,
-            isActivated: true,
-            isPause: false,
-            amounts: 4,
-            time: {
-                min: 1,
-                sec: 9
-            }
-        }, {
-            id: 2,
-            text: 'THE SECOND THING TO DO TODAY',
-            isChecked: false,
-            isActivated: false,
-            isPause: false,
-            amounts: 3,
-            time: {
-                min: 0,
-                sec: 5
-            }
-        }];
-        this.setState({
-            todos: todos
-        })
+        const xhr = new XMLHttpRequest();
+        xhr.open('get', this.props.url, true);
+        xhr.onload = () => {
+            let data = JSON.parse(xhr.responseText);
+            data = data.map(item => {
+                return {
+                    ...item,
+                    time: {
+                        min: 25,
+                        sec: 0
+                    }
+                }
+            })
+            this.setState({ todos: data });
+        };
+        xhr.send();
     }
 
     componentDidUpdate(prevProps, prepState) {
