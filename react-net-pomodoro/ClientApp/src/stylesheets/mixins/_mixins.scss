@@ -1,0 +1,60 @@
+//排版
+
+//排版邊框
+@mixin test-border {
+  border: 1px solid #222222 !important;
+}
+
+// 滿版
+@mixin full {
+  width: 100vw;
+  height: 100vh;
+}
+
+// 寬滿版
+@mixin fill-width {
+  width: 100%;
+  height: auto;
+}
+
+// 浮動式上下左右置中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 左右置中
+@mixin margin-center {
+  margin: 0 auto;
+}
+
+// flex 置中
+@mixin flex-center($dir, $wrap) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// 元素
+// 設定大小
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin square($s) {
+  width: $s;
+  height: $s;
+}
+
+//文字
+@mixin fonts ($color, $size, $weight, $spacing) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+}

@@ -16,9 +16,32 @@ class PlayButton extends Component{
   render(){
     const {isPause} = this.props.todo
     const {bigButton} = this.props
-    return(
-      <button className={`list-item__btn--${bigButton?'big':'small'}`} onClick={this.play}>{isPause ? '||':'>'}</button>
-    )
+    if (bigButton){
+      return(
+      <div className="count-down">
+        {/* <div className="process-mask right">
+          {
+            isPause ? <div class="process-bar right rightcircle"></div> : ''
+          }
+        </div>
+        <div className="process-mask left">
+          {
+            isPause ? <div class="process-bar left leftcircle lp"></div> : ''
+          }
+        </div> */}
+        <div className="play-button circle">
+          <button className={`list-item__btn list-item__btn--${bigButton?'big':'small'}`} onClick={this.play}>{isPause ? '||':'▶︎'}</button>
+        </div>
+      </div>
+      )
+    }else{
+      return(
+        <div className="play-button">
+          <button className={`list-item__btn list-item__btn--${bigButton?'big':'small'}`} onClick={this.play}>{isPause ? '||':'▶︎'}</button>
+        </div>
+      )
+    }
+    
   }
 }
 

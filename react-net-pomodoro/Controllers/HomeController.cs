@@ -23,6 +23,8 @@ namespace react_net_pomodoro.Controllers
                     IsActivated = true,
                     IsPause = false,
                     Amounts = 4,
+                    Min = 0,
+                    Sec = 5
                 },
                 new TodoModel
                 {
@@ -31,7 +33,9 @@ namespace react_net_pomodoro.Controllers
                     IsChecked = false,
                     IsActivated = false,
                     IsPause = false,
-                    Amounts = 3
+                    Amounts = 3,
+                    Min = 0,
+                    Sec = 5
                 },
                 new TodoModel
                 {
@@ -40,7 +44,9 @@ namespace react_net_pomodoro.Controllers
                     IsChecked = false,
                     IsActivated = false,
                     IsPause = false,
-                    Amounts = 1
+                    Amounts = 1,
+                    Min = 25,
+                    Sec = 0
                 }
             };
         }

@@ -1,18 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDom from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
+import './stylesheets/style.scss'
 
-const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
-const rootElement = document.getElementById('root');
 
-ReactDOM.render(
-  <BrowserRouter basename={baseUrl}>
-        <App url="/todos"/>
-  </BrowserRouter>,
-  rootElement);
-
-registerServiceWorker();
+ReactDom.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter> 
+, document.getElementById("root"))
 

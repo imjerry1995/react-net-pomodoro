@@ -10,5 +10,7 @@ namespace react_net_pomodoro.Models
         public bool IsActivated { get; set; }
         public bool IsPause { get; set; }
         public int Amounts { get; set; }
+        public int Min { get; set; }
+        public int Sec { get; set; }
     }
 }
