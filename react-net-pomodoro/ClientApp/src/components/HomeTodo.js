@@ -116,8 +116,8 @@ class HomeTodo extends Component {
               ...item,
               isPause: !item.isPause, //變回播放鍵
               amounts: todoSelect.amounts + 1,
-              min: 0,
-              sec: 6
+              min: 25,
+              sec: 0
             }
           
           
